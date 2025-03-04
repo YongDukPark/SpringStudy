@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <div class="container">
+      <div>
+        <table>
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>이름</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!--여기에서 자동적으로 객체를 가져와 for each가 돌면서 작동한다.
+          timeleaf 기능이 본격적으로 작동한다.-->
+            <tr th:each="member : ${members}">
+              <td th:text="${member.id}"></td>
+              <td th:text="${member.name}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> <!-- /container -->
+  </body>
+</html>

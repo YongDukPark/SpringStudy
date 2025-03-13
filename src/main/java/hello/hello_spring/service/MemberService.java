@@ -5,6 +5,7 @@ import hello.hello_spring.repository.MemberRepository;
 import hello.hello_spring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,6 +14,9 @@ import java.util.Optional;
 //원래대로라면 Component로 해야하는데 이게 되는 이유는
 //Service 안에 Component 어노테이션이 있기 때무이다.
 //@Service
+
+//모든 데이터 변경이 트랜잭션 안에서만 설정이 되어야한다.
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;

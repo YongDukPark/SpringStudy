@@ -45,8 +45,7 @@ public class JpaMemberRepository implements MemberRepository{
         // 여기서 보이는 쿼리가 JPQL이라는 쿼리 언어이다.
         // 객체를 대상으로 보내는거다.
         // 쿼리를 해석해보자면 select해온다 객체를 어디 m을
-        List<Member> result = em.createQuery("select m from Member m", Member.class)
+        return em.createQuery("select m from Member m", Member.class)
                 .getResultList();
-        return result;
     }
 }
